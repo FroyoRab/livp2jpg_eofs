@@ -4,7 +4,7 @@ import os.path
 from getLivpImgPath import scanLivpImg
 class getImg:
     def __init__(self):
-        self.isheic = false
+        self.isheic = False
         file_list = scanLivpImg().pathList
         for file_name in file_list:
             buf = bytearray(os.path.getsize(file_name))
