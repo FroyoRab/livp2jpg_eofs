@@ -29,8 +29,7 @@ FileEofs = {
     'jpg':b'\xff\xd8\xff\xe1',
 }
 
-def convertLivp2Img():
-    file_list = ScanLivpImg().path_list
+def convertLivp2Img(file_list:list):
     for file_name in file_list:
         logger.info("="*6+file_name+"="*6)
         logger.info(f"获取{file_name}二进制内容……")
@@ -79,6 +78,6 @@ def convertHeic2jpg(heicFilePath:str):
         logger.info(f"已转换heic文件至{save_file_name}。")
     
 if __name__ == "__main__":
-    convertLivp2Img()
+    convertLivp2Img(ScanLivpImg().path_list)
     # support cmd exe
     os.system('pause')
